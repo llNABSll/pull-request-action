@@ -1,5 +1,7 @@
 name: PR - Tests & SonarQube
 
+description: "Run unit tests, generate reports, and perform SonarQube scan"
+
 inputs:
   SONAR_TOKEN:
     description: "SonarQube token"
@@ -21,9 +23,11 @@ runs:
         python-version: "3.11"
 
     - name: Install dependencies
+      shell: bash
       run: pip install -r requirements.txt
 
     - name: Run unit tests
+      shell: bash
       run: ${{ UNIT_TESTS_COMMAND }}
 
     - name: Publish Test Report
