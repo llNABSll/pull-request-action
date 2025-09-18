@@ -78,7 +78,7 @@ runs:
 
     - name: SonarQube Scan
       if: success()
-      uses: SonarSource/sonarqube-scan-action@v5
+      uses: SonarSource/sonarqube-scan-action@v6
       env:
         SONAR_TOKEN: ${{ inputs.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io
